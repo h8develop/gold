@@ -4,18 +4,22 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html,body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   height: 100%;
   padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #1c1f24;
+  background: linear-gradient(180deg, #000000 0.3%, #ff8c00 50%, #ffdd57 100%);
+
+
   overflow-y: hidden;
   overflow-x: hidden;
+  color: #fff; /* Устанавливаем цвет текста */
 }
+
 
 .header {
   display: flex;
@@ -31,11 +35,8 @@ body {
 }
 
 .score {
-  color: #fff;
-  text-align: center;
   font-size: 36px;
-  font-weight: 800;
-  user-select: none;
+  font-weight: bold;
 }
 
 .circle {
@@ -63,21 +64,19 @@ body {
 
 .plus-one {
   position: absolute;
-  font-family: Inter;
-  text-shadow: 0px 0px 4px rgba(234, 182, 64, 0.25);
+  font-family: Inter, sans-serif;
+  text-shadow: 0px 0px 4px rgba(234, 182, 64, 0.25); /* Можно убрать или изменить, если не нужен */
   font-size: 24px;
   font-weight: 800;
-  background: linear-gradient(180deg, #e8c547 0%, #ef882b 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* Белый цвет текста */
   pointer-events: none;
   user-select: none;
   animation: move-up 2s forwards;
 }
-/* === NEW === */
+
+/*МЕНЮЮЮЮЮЮЮЮЮ*/
 .menu {
-  background: #2a292e;
+  background: rgba(42, 41, 46, 0.3); /* Полупрозрачный фон */
   display: flex;
   align-items: center;
   position: absolute;
@@ -91,16 +90,25 @@ body {
 }
 
 .menu-button {
-  color: #4e4d52;
+  color: #ffffff; /* Белый цвет текста */
   cursor: pointer;
-  transition: color 0.3s;
+  padding: 8px 15px; /* Уменьшенные отступы для меньшего фона */
+  flex: 1; /* Равное распределение кнопок по ширине */
+  text-align: center; /* Центрируем текст и иконки */
+  border-radius: 8px; /* Немного уменьшили закругление углов */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.menu-button:hover,
-.menu-button.active {
-  color: #fff;
-  cursor: pointer;
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Лёгкий фон при наведении */
 }
+
+.menu-button.active {
+  background-color: rgba(255, 255, 255, 0.15); /* Полупрозрачный белый фон для активной вкладки */
+  color: #ffffff; /* Цвет текста остаётся белым */
+}
+
+
 /* === /NEW === */
 
 @keyframes move-up {
@@ -209,4 +217,124 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+
+.earnings {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.earnings p {
+  display: inline; /* Делаем текстовым элементом в строке */
+  white-space: nowrap; /* Убираем перенос текста на новую строку */
+  font-size: 15px; /* Настроим размер шрифта по необходимости */
+}
+
+
+
+/* Стили для счетчика тапов */
+.tap-counter {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.tap-icon {
+  width: 24px; /* Ширина изображения */
+  height: 24px; /* Высота изображения */
+  margin-right: 8px; /* Отступ справа от изображения */
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Расстояние между элементами */
+}
+
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.username {
+  font-size: 14px;
+  margin-right: 50px;
+}
+
+.bot-title {
+  font-size: 30px;
+  font-weight: bold;
+  flex-grow: 1; /* Расширяет заголовок, чтобы он был по центру */
+  text-align: center;
+
+}
+
+.contest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left:366px
+}
+
+.contest-image {
+  width: 100%;
+  max-width: 35px; /* Максимальная ширина изображения */
+  border-radius: 10px;
+}
+
+.timer {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffdd57; /* Цвет таймера */
+}
+
+.valuta-icon {
+  width: 40px; /* Настройте размер иконки */
+  height: 40px;
+  margin-bottom: 5px; /* Отступ снизу, чтобы отделить от текста */
+}
+
+
+.earning-item {
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+
+.about-token {
+  background: rgba(42, 41, 46, 0.09); /* Стилистика как у меню */
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 15px; /* Отступы как у меню */
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 50px;
+}
+
+
+.about-token:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Лёгкий фон при наведении, как у меню */
 }
